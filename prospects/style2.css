@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.khachhang {
+  position: relative;
+  background: linear-gradient(to right, #8360c3, #2ebf91);
+  height: 100vh;
+  overflow-x: hidden;
+}
+.khachhang .thongtinkhachhang {
+  position: absolute;
+  width: 75%;
+  background-color: #FFFFFF;
+  font-family: "Raleway", sans-serif;
+  margin: 20px 0px 0px 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+.khachhang .thongtinkhachhang .labelclient {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  background-color: gray;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #FFFFFF;
+}
+.khachhang .thongtinkhachhang .clientinfo {
+  width: 100%;
+  margin: 0;
+  font-size: 18px;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideleft {
+  padding: 0;
+  margin: 0;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideleft .infosideleft {
+  padding-top: 30px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-33%);
+}
+.khachhang .thongtinkhachhang .clientinfo .sideleft .infosideleft .fieldclient {
+  margin: 5px 5px;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideleft .infosideleft .fieldclient .labelinfo {
+  font-weight: bold;
+  color: #332e2e;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright {
+  padding: 0;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai {
+  position: relative;
+  left: -5%;
+  top: 32%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row1 {
+  position: relative;
+  top: 50px;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row1 h2 {
+  color: #000;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row2 {
+  position: relative;
+  top: 80px;
+  left: -30px;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row2 .demnguoc {
+  display: flex;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row2 .demnguoc p {
+  border: 0px so red;
+  margin-right: 10px;
+  width: 72px;
+  height: 72px;
+  line-height: 72px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: yellow;
+  border-radius: 5px;
+  font-size: 28px;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row2 .demnguoc small {
+  color: #000;
+  font-size: 30px;
+  padding-top: 11px;
+  right: 5px;
+  position: relative;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row2 .timename {
+  display: flex;
+  font-size: 17px;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row2 .timename span#ngay {
+  position: absolute;
+  top: 70px;
+  left: 18px;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row2 .timename span#gio {
+  position: absolute;
+  top: 70px;
+  left: 113px;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row2 .timename span#phut {
+  position: absolute;
+  top: 70px;
+  left: 202px;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row2 .timename span#giay {
+  position: absolute;
+  top: 70px;
+  left: 291px;
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row3 {
+  position: relative;
+  top: 107px;
+  left: 50%;
+  transform: translateX(-14%);
+}
+.khachhang .thongtinkhachhang .clientinfo .sideright .thoigianconlai .row3 .giahan {
+  font-size: 18px;
+}
+.khachhang .thongtinkhachhang .eventclick .ngungsudung {
+  margin: 30px;
+  left: 50%;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=style2.css.map */
