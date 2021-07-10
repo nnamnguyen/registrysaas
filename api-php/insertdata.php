@@ -6,7 +6,7 @@
     $phone = $_POST['phone'];
     $domain = $_POST['domain'];
     $dt = new DateTime('now');
-    $id_lead = 'LEA';
+    $id_lead = 'lea';
 
     $dt->setTimezone(new DateTimeZone('Asia/Ho_Chi_Minh'));
     // $currentDateTime = $dt->format('d-m-Y H:i:s');
@@ -51,12 +51,24 @@
     $sql = "INSERT INTO leads (id_lead, name, email, password, company, phone, start_date, end_date, domain ) VALUES ('$id_lead','$name_lead', '$email', '$passwordlead', '$company', '$phone', '$currentDateTime', '$expiredDateTime', '$domain')";
     if ($conn->query($sql) === true) {//tạo được data cho leads mới thì trả về id, không tạo được thì gửi error
         echo $id_lead;
+        // echo getcwd();
     } else {
         // echo $conn->error;
         echo 'error';
     }
     $conn->close();
-    $yamlContent = file_get_contents('deployments/aa-deployment.yaml');
-    $yamlContent = preg_replace('/aa/',$id_lead,$yamlContent);
-    file_put_contents('deployments/'.$id_lead.'.yaml',$yamlContent);
-    
+    //Tao Folder 
+    mkdir('/opt/lampp/htdocs/registry/api-php/deployments/'.$id_lead,0777,true);
+    //Tao wordpress
+    $yamlContentWP = file_get_contents('deployments/exam/ex-wordpress-deployment.yaml');
+    $yamlContentWP = preg_replace('/ex/',$id_lead,$yamlContentWP);
+    file_put_contents('/opt/lampp/htdocs/registry/api-php/deployments/'.$id_lead.'/'.$id_lead.'-wordpress.yaml',$yamlContentWP);
+    //Tao mysql
+    $yamlContentMysql = file_get_contents('deployments/exam/ex-mysql-deployment.yaml');
+    $yamlContentMysql = preg_replace('/ex/',$id_lead,$yamlContentMysql);
+    file_put_contents('/opt/lampp/htdocs/registry/api-php/deployments/'.$id_lead.'/'.$id_lead.'-mysql.yaml',$yamlContentMysql);
+    //Tao Kustomization
+    $yamlContentkus = file_get_contents('deployments/exam/kustomization.yaml');
+    $yamlContentkus = preg_replace('/ex-mysql/',$id_lead,$yamlContentkus);
+    $yamlContentkus = preg_replace('/ex-wordpress/',$id_lead,$yamlContentkus);
+    file_put_contents('/opt/lampp/htdocs/registry/api-php/deployments/'.$id_lead.'/kustomization.yaml',$yamlContentkus);

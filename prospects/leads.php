@@ -13,17 +13,50 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
-  <link href="https://fonts.google.com/share?selection.family=Raleway:ital,wght@0,300;0,400;1,300;1,400"
-    rel="stylesheet">
+  <link href="https://fonts.google.com/share?selection.family=Raleway:ital,wght@0,300;0,400;1,300;1,400" rel="stylesheet">
 </head>
 
 <body>
-  <?php 
-  include 'events.php';
+  <?php
+  $idNewLead = $_GET["id"];
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $db = "infosytemdb";
+  // Create connect
+  $conn = new mysqli($servername, $username, $password, $db);
+  $conn->set_charset("utf8");
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+  //Nhận giá trị từ pageadmin
+  $sql = "SELECT name, email, company, phone, start_date, end_date, domain FROM leads WHERE id_lead='" . $idNewLead . "'";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      $name_lead = $row["name"];
+      $company = $row["company"];
+      $email = $row["email"];
+      $phone = $row["phone"];
+      $domain = $row["domain"];
+      $start_date = $row["start_date"];
+      $end_date = $row["end_date"];
+    }
+  } else {
+    $name_lead = '(undefined)';
+    $company = '(undefined)';
+    $email = '(undefined)';
+    $phone = '(undefined)';
+    $domain = '';
+    $start_date = '(undefined)';
+    $end_date = '(undefined)';
+    // echo "(undefined)";
+  }
   ?>
   <div class="khachhang">
     <div class="thongtinkhachhang">
       <div class="row labelclient">
+        <button class="btnrollback"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
         <h2>Thông tin khách hàng</h2>
       </div>
       <div class="row clientinfo">
@@ -35,7 +68,7 @@
                   <p class="text-right labelinfo">Họ tên:</p>
                 </div>
                 <div class="col-md-9">
-                  <p><?php echo $name_lead;?></p>
+                  <p><?php echo $name_lead; ?></p>
                 </div>
               </div>
             </div>
@@ -45,7 +78,7 @@
                   <p class="text-right labelinfo">Công ty:</p>
                 </div>
                 <div class="col-md-9">
-                  <p><?php echo $company;?></p>
+                  <p><?php echo $company; ?></p>
                 </div>
               </div>
             </div>
@@ -55,7 +88,7 @@
                   <p class="text-right labelinfo">Email:</p>
                 </div>
                 <div class="col-md-9">
-                  <p><?php echo $email;?></p>
+                  <p><?php echo $email; ?></p>
                 </div>
               </div>
             </div>
@@ -65,7 +98,7 @@
                   <p class="text-right labelinfo">Điện thoại:</p>
                 </div>
                 <div class="col-md-9">
-                  <p><?php echo $phone;?></p>
+                  <p><?php echo $phone; ?></p>
                 </div>
               </div>
             </div>
@@ -75,7 +108,7 @@
                   <p class="text-right labelinfo">Tên miền:</p>
                 </div>
                 <div class="col-md-9">
-                  <a id="linktomysite" href='' target="_blank"><?php echo $domain;?></a>
+                  <a id="linktomysite" href='' target="_blank"><?php echo $domain; ?></a>
                 </div>
               </div>
             </div>
@@ -85,10 +118,10 @@
                   <p class="text-right labelinfo">Ngày bắt đầu:</p>
                 </div>
                 <div class="col-md-9">
-                  <p id="start_datetime" style="display: none;"><?php echo $start_date;?></p>
+                  <p id="start_datetime" style="display: none;"><?php echo $start_date; ?></p>
                   <p id="start_date">
                     <?php
-                      echo date('d-m-Y',strtotime($start_date));
+                    echo date('d-m-Y', strtotime($start_date));
                     ?>
                   </p>
                 </div>
@@ -100,10 +133,10 @@
                   <p class="text-right labelinfo">Ngày hết hạn:</p>
                 </div>
                 <div class="col-md-9">
-                  <p id="end_datetime" style="display: none;"><?php echo $end_date;?></p>
+                  <p id="end_datetime" style="display: none;"><?php echo $end_date; ?></p>
                   <p id="end_date">
                     <?php
-                      echo date('d-m-Y',strtotime($end_date));
+                    echo date('d-m-Y', strtotime($end_date));
                     ?>
                   </p>
                 </div>
@@ -133,7 +166,7 @@
                 </div>
               </div>
               <div class="row row3">
-                <button type="button" class="btn btn-success giahan">Gia hạn</button>
+                <button type="button" class="btn btn-success giahan" data-id='<?php echo $idNewLead; ?>'>Gia hạn</button>
               </div>
             </div>
           </div>

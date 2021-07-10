@@ -24,6 +24,10 @@ body {
   transform: translateX(-50%);
   border-radius: 10px;
 }
+.khachhang .thongtinkhachhang h1, .khachhang .thongtinkhachhang h2, .khachhang .thongtinkhachhang h3, .khachhang .thongtinkhachhang h4, .khachhang .thongtinkhachhang h5, .khachhang .thongtinkhachhang h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .khachhang .thongtinkhachhang .labelclient {
   width: 100%;
   padding-top: 20px;
@@ -34,6 +38,15 @@ body {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   color: #FFFFFF;
+}
+.khachhang .thongtinkhachhang .labelclient button {
+  margin-right: 10px;
+}
+.khachhang .thongtinkhachhang .labelclient button i {
+  font-size: 15px;
+  color: white;
+  background-color: gray;
+  padding: 10px 15px;
 }
 .khachhang .thongtinkhachhang .clientinfo {
   width: 100%;

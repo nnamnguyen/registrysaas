@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.khachhang {
+  position: relative;
+  background: linear-gradient(to right, #8360c3, #2ebf91);
+  height: 100vh;
+  overflow-x: hidden;
+}
+.khachhang .thongtinkhachhang {
+  position: absolute;
+  width: 99%;
+  background-color: #FFFFFF;
+  font-family: "Raleway", sans-serif;
+  margin: 10px 0px 0px 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+.khachhang .thongtinkhachhang .labelclient {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 50px;
+  background-color: gray;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #FFFFFF;
+  font-family: "Raleway", sans-serif;
+}
+.khachhang .thongtinkhachhang .clientinfo {
+  width: 100%;
+  margin: 0;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+}
+.khachhang .thongtinkhachhang .clientinfo tbody tr td.lead p {
+  color: #007BFF;
+  cursor: pointer;
+}
+.khachhang .thongtinkhachhang .clientinfo tbody tr .row2 {
+  position: relative;
+  left: 50%;
+  transform: translateX(-25%);
+}
+.khachhang .thongtinkhachhang .clientinfo tbody tr .row2 .demnguoc {
+  display: flex;
+}
+.khachhang .thongtinkhachhang .clientinfo tbody tr .row2 .demnguoc p {
+  border: 0px solid red;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: yellow;
+  border-radius: 5px;
+  font-size: 28px;
+  margin-bottom: 0;
+}
+.khachhang .thongtinkhachhang .clientinfo tbody tr .row2 .demnguoc small {
+  color: #000;
+  font-size: 30px;
+  right: 5px;
+  position: relative;
+}
+.khachhang .thongtinkhachhang .clientinfo tbody tr .row3 {
+  position: relative;
+  left: 50%;
+  transform: translateX(-25%);
+}
+.khachhang .thongtinkhachhang .clientinfo tbody tr .row3 span {
+  margin-right: 25px;
+  margin-left: 5px;
+}
+
+/*# sourceMappingURL=admis.css.map */

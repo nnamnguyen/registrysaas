@@ -33,7 +33,10 @@ body {
         left: 50%;
         transform: translateX(-50%);
         border-radius: 10px;
-
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
         .labelclient {
             width: 100%;
             padding-top: 20px;
@@ -44,6 +47,15 @@ body {
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             color: #FFFFFF;
+            button{
+                i{
+                    font-size: 15px;
+                    color: white;
+                    background-color: gray;
+                    padding: 10px 15px;
+                }
+                margin-right: 10px;
+            }
         }
 
         .clientinfo {

@@ -45,14 +45,14 @@ $(document).ready(function () {
                             type: "POST",
                             url: "./api-php/deployment.php",
                             data: {
-                                'valuedepl': result,
+                                'id_lead': result,
                             },
                             caches: false,
                             success: function (kq) {
                                 // alert(kq);                                
                             }
                         })
-                        window.location.href = "./prospects/leads.php";
+                        window.location.href = "./pageadmin/admis.php";
                     }
                 }
             });
